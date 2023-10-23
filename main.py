@@ -1,8 +1,8 @@
 import pygame
-from space_ship import SpaceShip
+from spaceship import Spaceship
 
 
-WIDTH, HEIGHT = 900, 700
+WIDTH, HEIGHT = 1000, 600
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 FPS = 60
@@ -15,7 +15,8 @@ pygame.display.set_caption("Space War")
 
 def main():
     clock = pygame.time.Clock()
-    space_ship1 = SpaceShip(100, 100, 1)
+    space_ship1 = Spaceship(100, 100, 1)
+    space_ship2 = Spaceship(900, 500, 2)
 
     run = True
     while run:
@@ -39,9 +40,21 @@ def main():
 
         if key_pressed[pygame.K_w]:
             space_ship1.apply_thrust(0.1)
+
+        if key_pressed[pygame.K_LEFT]:
+            space_ship2.rotate(1)
+
+        if key_pressed[pygame.K_RIGHT]:
+            space_ship2.rotate(-1)
+
+        if key_pressed[pygame.K_UP]:
+            space_ship2.apply_thrust(0.1)
         
         space_ship1.move()
         space_ship1.draw(screen)
+
+        space_ship2.move()
+        space_ship2.draw(screen)
 
 
 
