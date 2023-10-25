@@ -13,7 +13,7 @@ pygame.display.set_caption("Space War")
 def main():
     clock = pygame.time.Clock()
     space_ship1 = Spaceship(100, 100, 1)
-    space_ship2 = Spaceship(900, 500, 2)
+    space_ship2 = Spaceship(WIDTH-100, HEIGHT-100, 2)
 
     run = True
     while run:
