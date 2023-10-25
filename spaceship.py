@@ -2,6 +2,8 @@ import math
 import pygame
 from os.path import join
 
+from game_properties import HEIGHT, WIDTH
+
 
 def normalize_angle(angle):
     angle = angle % 360  # Convert angle to equivalent angle within 360 degrees

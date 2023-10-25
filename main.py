@@ -1,11 +1,8 @@
 import pygame
 from spaceship import Spaceship
+from game_properties import HEIGHT, WIDTH, BLACK, WHITE, FPS
 
 
-WIDTH, HEIGHT = 1000, 600
-BLACK = (0, 0, 0)
-WHITE = (255, 255, 255)
-FPS = 60
 
 pygame.init()
 
