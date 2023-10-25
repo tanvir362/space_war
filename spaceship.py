@@ -46,11 +46,17 @@ class Spaceship:
         self.vy += ay
 
     def move(self):
+        if self._img_rect.x < 0 or self._img_rect.x+self.WIDTH>=WIDTH:
+            self.vx = -self.vx
+
+        if self._img_rect.y < 0 or self._img_rect.y+self.HEIGHT>=HEIGHT:
+            self.vy = -self.vy
+
         self.x += self.vx
         self.y += self.vy
 
-        self.x %= 1000
-        self.y %= 600
+        # self.x %= (WIDTH+Spaceship.WIDTH/2)
+        # self.y %= (HEIGHT+Spaceship.HEIGHT/2)
 
         self._img_rect.center = (self.x, self.y)
 
