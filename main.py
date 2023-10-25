@@ -48,11 +48,13 @@ def main():
             space_ship2.apply_thrust(0.1)
         
         space_ship1.move()
-        space_ship1.draw(screen)
-
         space_ship2.move()
+
+        space_ship1.draw(screen)
         space_ship2.draw(screen)
 
+        space_ship1.handle_collision(space_ship2)
+        
 
 
         pygame.display.update()

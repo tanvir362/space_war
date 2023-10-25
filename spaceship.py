@@ -63,6 +63,18 @@ class Spaceship:
         self._img_rect = self._img.get_rect(center=(self.x, self.y))
 
 
+    def handle_collision(self, other):
+        if self._img_rect.colliderect(other._img_rect):
+            tvx = other.vx
+            tvy = other.vy
+
+            other.vx = self.vx
+            other.vy = self.vy
+            
+            self.vx = tvx
+            self.vy = tvy
+
+
     def draw(self, surface:pygame.Surface):
 
         # print('ship', self.id, 'x', self._img_rect.x, 'y', self._img_rect.y)
