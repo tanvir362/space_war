@@ -12,7 +12,7 @@ def normalize_angle(angle):
     return angle
 
 class Spaceship:
-    WIDTH, HEIGHT = 60, 60
+    WIDTH, HEIGHT = 40, 40
     ROTATION_UNIT = 5
     count = 0
 
