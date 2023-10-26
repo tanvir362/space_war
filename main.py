@@ -1,6 +1,6 @@
 import pygame
 from spaceship import Spaceship
-from game_properties import HEIGHT, WIDTH, BLACK, WHITE, FPS
+from game_properties import HEIGHT, WIDTH, BLACK, WHITE, FPS, THRUST
 
 
 
@@ -24,9 +24,9 @@ def main():
             if event.type == pygame.QUIT:
                 run = False
 
-            # if event.type == pygame.KEYDOWN:
-            #     if event.key == pygame.K_w:
-            #         space_ship1.apply_thrust(1)
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_q:
+                    run = False
 
         key_pressed = pygame.key.get_pressed()
         if key_pressed[pygame.K_a]:
@@ -36,7 +36,7 @@ def main():
             space_ship1.rotate(-1)
 
         if key_pressed[pygame.K_w]:
-            space_ship1.apply_thrust(0.1)
+            space_ship1.apply_thrust(THRUST)
 
         if key_pressed[pygame.K_LEFT]:
             space_ship2.rotate(1)
@@ -45,7 +45,7 @@ def main():
             space_ship2.rotate(-1)
 
         if key_pressed[pygame.K_UP]:
-            space_ship2.apply_thrust(0.1)
+            space_ship2.apply_thrust(THRUST)
         
         space_ship1.move()
         space_ship2.move()
